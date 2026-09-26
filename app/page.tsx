@@ -3,7 +3,7 @@ import { useState, useEffect, useCallback, useRef } from "react";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 type Bot = { id: string; name: string; description?: string; chat_id: string; enabled: boolean; rate_limit: number; created_at: string; total_messages?: number; messages_today?: number };
-type MsgLog = { id: string; bot_id: string; bot_name: string; chat_id: string; message: string; parse_mode?: string; status: string; tg_message_id?: number; error?: string; ip?: string; created_at: string };
+type MsgLog = { id: string; bot_id: string; bot_name: string; chat_id: string; message: string; status: string; tg_message_id?: number; error?: string; ip?: string; created_at: string };
 type Template = { id: string; name: string; content: string; parse_mode: string; bot_id?: string; bot_name?: string; usage_count: number; variables: string[]; created_at: string };
 type TrackerCfg = { id: string; name: string; tracker_key: string; bot_id?: string; bot_name?: string; notify_events: string[]; allowed_origins: string[]; enabled: boolean; total_events: number; events_today: number; created_at: string };
 type TrackerEvent = { id: string; tracker_name?: string; event_type: string; url?: string; ip?: string; ua?: string; session_id?: string; data: Record<string, unknown>; created_at: string };
@@ -516,13 +516,12 @@ function MessagesTab({ msgs, loading, reload, api, toast }: { msgs: MsgLog[]; lo
       {filtered.length === 0 ? <div className="empty-state card"><div className="icon">💬</div>Tidak ada pesan.</div> : (
         <div className="table-wrap">
           <table>
-            <thead><tr><th>Bot</th><th>Chat ID</th><th>Pesan</th><th>Mode</th><th>Status</th><th>TG ID</th><th>Waktu</th><th>Aksi</th></tr></thead>
+            <thead><tr><th>Bot</th><th>Chat ID</th><th>Pesan</th><th>Status</th><th>TG ID</th><th>Waktu</th><th>Aksi</th></tr></thead>
             <tbody>{filtered.map(m => (
               <tr key={m.id}>
                 <td><span className="badge badge-blue">{m.bot_name}</span></td>
                 <td><code>{m.chat_id}</code></td>
                 <td style={{ maxWidth: 200 }}><span title={m.message}>{truncate(m.message, 45)}</span></td>
-                <td><code>{m.parse_mode ?? "—"}</code></td>
                 <td><span className={`badge ${m.status === "sent" ? "badge-green" : "badge-red"}`}>{m.status}</span>{m.error && <div className="text-xs" style={{ color: "var(--red)" }}>{truncate(m.error, 30)}</div>}</td>
                 <td><code>{m.tg_message_id ?? "—"}</code></td>
                 <td className="text-muted text-sm">{fmtShort(m.created_at)}</td>
