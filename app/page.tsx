@@ -3,19 +3,7 @@ import { useState, useEffect, useCallback, useRef } from "react";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 type Bot = { id: string; name: string; description?: string; chat_id: string; enabled: boolean; rate_limit: number; created_at: string; total_messages?: number; messages_today?: number };
-type MsgLog = {
-  id: string;
-  bot_id: string;
-  bot_name: string;
-  chat_id: string;
-  message: string;
-  parse_mode?: string;
-  status: string;
-  tg_message_id?: number;
-  error?: string;
-  ip?: string;
-  created_at: string;
-};
+type MsgLog = { id: string; bot_id: string; bot_name: string; chat_id: string; message: string; parse_mode?: string; status: string; tg_message_id?: number; error?: string; ip?: string; created_at: string };
 type Template = { id: string; name: string; content: string; parse_mode: string; bot_id?: string; bot_name?: string; usage_count: number; variables: string[]; created_at: string };
 type TrackerCfg = { id: string; name: string; tracker_key: string; bot_id?: string; bot_name?: string; notify_events: string[]; allowed_origins: string[]; enabled: boolean; total_events: number; events_today: number; created_at: string };
 type TrackerEvent = { id: string; tracker_name?: string; event_type: string; url?: string; ip?: string; ua?: string; session_id?: string; data: Record<string, unknown>; created_at: string };
