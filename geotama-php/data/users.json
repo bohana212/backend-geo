@@ -1,0 +1,52 @@
+[
+    {
+        "id": 1,
+        "username": "superadmin",
+        "email": "admin@geotama.local",
+        "name": "Super Admin",
+        "password": "$2y$12$L4d.EauZxRiuM4hEraH4YuU.TtDKrDWXO\/iy3CY\/xjJvgasBD0LNS",
+        "role": "super_admin",
+        "verified": true,
+        "status": "active"
+    },
+    {
+        "id": 1789541337,
+        "username": "dudi",
+        "email": "geotamadesign@yahoo.com",
+        "name": "Pa Dudi",
+        "password": "$2y$10$aCXGai93FmoULlM5W1ujJO.EY\/25SU3d.7ikqYepAlISdg6K3aeRa",
+        "role": "verified_admin",
+        "verified": true,
+        "status": "active"
+    },
+    {
+        "id": 1789548852,
+        "username": "Han",
+        "email": "hantampan2@g.co",
+        "name": "Muhammad Bohana",
+        "password": "$2y$10$O8gR507b3xG1AdrmPbe.ou99MZ0T5xiejrA6emWAaCgYIDzkk6vum",
+        "role": "super_admin",
+        "verified": true,
+        "status": "active"
+    },
+    {
+        "id": 1789548909,
+        "username": "arul",
+        "email": "Arul@g.co",
+        "name": "Arul",
+        "password": "$2y$10$dzLs8NRu3q9eEmpfnG3WjOa0nTNA9qlN4sfKRG3RQnAvOrx2N2lCO",
+        "role": "verified_admin",
+        "verified": true,
+        "status": "active"
+    },
+    {
+        "id": 1789548963,
+        "username": "Yayat",
+        "email": "ukwnown@g.co",
+        "name": "Yayat Nur Hidayat",
+        "password": "$2y$10$.T5ed9c2u5QsVE5qVoqLseRlq2mPllXIyi11.8MrmpdW\/MC.9uFom",
+        "role": "super_admin",
+        "verified": true,
+        "status": "active"
+    }
+]

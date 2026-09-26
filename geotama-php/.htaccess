@@ -1,0 +1,12 @@
+Options -Indexes
+
+# Lindungi data mentah & config dari akses langsung lewat browser.
+<FilesMatch "\.(json)$">
+  Require all denied
+</FilesMatch>
+<Files "config.php">
+  Require all denied
+</Files>
+<Files "config.example.php">
+  Require all denied
+</Files>
